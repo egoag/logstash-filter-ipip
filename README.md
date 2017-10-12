@@ -1,5 +1,9 @@
 # Logstash Plugin
 
+GeoIP like filter for .datx file of ipip.net.  
+
+*Place .datx at `/var/lib/ipip.net/ipip.datx` to use it.*
+
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
 
 It is fully free and fully open source. The license is Apache 2.0, meaning you are pretty much free to use it however you want in whatever way.
