@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'logstash-filter-ipip'
-  s.version       = '0.1.0'
+  s.version       = '0.1.1'
   s.licenses      = ['Apache License (2.0)']
   s.summary       = 'This ipip filter work like geoip except based on ipip.net\'s ".dat" file.'
   s.description   = 'This version is for logstash 5.5.2 by now.'

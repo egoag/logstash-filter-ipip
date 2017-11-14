@@ -92,22 +92,22 @@ module SeventeenMon
       end
 
       data = {
-        country: result[0] or 'n/a',
-        province: result[1] or 'n/a',
-        city: result[2] or 'n/a',
-        district:result[3] or 'n/a',
-        isp:result[4] or 'n/a',
-        latitude:result[5] or 'n/a',
-        longitude:result[6] or 'n/a',
-        timezone_name:result[7] or 'n/a',
-        timezone:result[8] or 'n/a',
-        zip:result[9] or 'n/a',
-        phonecode:result[10] or 'n/a',
-        countrycode:result[11] or 'n/a',
-        region:result[12] or 'n/a',
+        country: result[0] || "N/A",
+        province: result[1] || "N/A",
+        city: result[2] || "N/A",
+        district: result[3] || "N/A",
+        isp: result[4] || "N/A",
+        latitude: result[5] || "N/A",
+        longitude: result[6] || "N/A",
+        timezone_name: result[7] || "N/A",
+        timezone: result[8] || "N/A",
+        zip: result[9] || "N/A",
+        phonecode: result[10] || "N/A",
+        countrycode: result[11] || "N/A",
+        region: result[12] || "N/A",
         location: {
-          lon: result[6] or 'n/a',
-          lat: result[5] or 'n/a'
+          lon: result[6] || "N/A",
+          lat: result[5] || "N/A"
         }
       }
     end
