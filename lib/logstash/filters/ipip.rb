@@ -92,22 +92,22 @@ module SeventeenMon
       end
 
       data = {
-        country: result[0],
-        province: result[1],
-        city: result[2],
-        district:result[3],
-        isp:result[4],
-        latitude:result[5],
-        longitude:result[6],
-        timezone_name:result[7],
-        timezone:result[8],
-        zip:result[9],
-        phonecode:result[10],
-        countrycode:result[11],
-        region:result[12],
+        country: result[0] or 'n/a',
+        province: result[1] or 'n/a',
+        city: result[2] or 'n/a',
+        district:result[3] or 'n/a',
+        isp:result[4] or 'n/a',
+        latitude:result[5] or 'n/a',
+        longitude:result[6] or 'n/a',
+        timezone_name:result[7] or 'n/a',
+        timezone:result[8] or 'n/a',
+        zip:result[9] or 'n/a',
+        phonecode:result[10] or 'n/a',
+        countrycode:result[11] or 'n/a',
+        region:result[12] or 'n/a',
         location: {
-          lon: result[6],
-          lat: result[5]
+          lon: result[6] or 'n/a',
+          lat: result[5] or 'n/a'
         }
       }
     end
@@ -139,7 +139,7 @@ class LogStash::Filters::Ipip < LogStash::Filters::Base
   #    {
   #        ipip => {
   #            "source" => "8.8.8.8"
-  #            "target" => "ipip"
+  #            "target" => "geoip"
   #            "lru_cache_size" => "10000"
   #        }
   #    }
@@ -149,7 +149,7 @@ class LogStash::Filters::Ipip < LogStash::Filters::Base
   
   # Replace the message with this value.
   config :source, :validate => :string, :require => true
-  config :target, :validate => :string, :default => 'ipip'
+  config :target, :validate => :string, :default => 'geoip'
   config :lru_cache_size, :validate => :number, :default => 10000
   
   LOOKUP_CACHE = LruRedux::ThreadSafeCache.new(10000)
