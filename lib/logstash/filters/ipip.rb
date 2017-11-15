@@ -92,22 +92,22 @@ module SeventeenMon
       end
 
       data = {
-        country: result[0] || "N/A",
-        province: result[1] || "N/A",
-        city: result[2] || "N/A",
-        district: result[3] || "N/A",
-        isp: result[4] || "N/A",
-        latitude: result[5] || "N/A",
-        longitude: result[6] || "N/A",
-        timezone_name: result[7] || "N/A",
-        timezone: result[8] || "N/A",
-        zip: result[9] || "N/A",
-        phonecode: result[10] || "N/A",
-        countrycode: result[11] || "N/A",
-        region: result[12] || "N/A",
+        country: result[0].empty? ? "N/A" : result[0],
+        province: result[1].empty? ? "N/A" : result[1],
+        city: result[2].empty? ? "N/A" : result[2],
+        district: result[3].empty? ? "N/A" : result[3],
+        isp: result[4].empty? ? "N/A" : result[4],
+        latitude: result[5].empty? ? "N/A" : result[5],
+        longitude: result[6].empty? ? "N/A" : result[6],
+        timezone_name: result[7].empty? ? "N/A" : result[7],
+        timezone: result[8].empty? ? "N/A" : result[8],
+        zip: result[9].empty? ? "N/A" : result[9],
+        phonecode: result[10].empty? ? "N/A" : result[10],
+        countrycode: result[11].empty? ? "N/A" : result[11],
+        region: result[12].empty? ? "N/A" : result[12],
         location: {
-          lon: result[6] || "N/A",
-          lat: result[5] || "N/A"
+          lon: result[6].empty? ? "N/A" : result[6],
+          lat: result[5].empty? ? "N/A" : result[5]
         }
       }
     end
