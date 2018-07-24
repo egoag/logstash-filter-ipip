@@ -1,8 +1,6 @@
 # Logstash Plugin
 
-GeoIP like filter for .datx file of ipip.net.  
-
-*Place .datx at `/var/lib/ipip.net/ipip.datx` to use it.*
+[![Travis Build Status](https://travis-ci.org/logstash-plugins/logstash-filter-geoip.svg)](https://travis-ci.org/logstash-plugins/logstash-filter-geoip)
 
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
 
@@ -41,6 +39,18 @@ bundle install
 bundle install
 ```
 
+- Pull down GeoIP database files
+
+```sh
+bundle exec rake vendor
+```
+
+- Install jar dependencies
+
+```
+bundle exec rake install_jars
+```
+
 - Run tests
 
 ```sh
@@ -57,7 +67,12 @@ gem "logstash-filter-awesome", :path => "/your/local/logstash-filter-awesome"
 ```
 - Install plugin
 ```sh
+# Logstash 2.3 and higher
 bin/logstash-plugin install --no-verify
+
+# Prior to Logstash 2.3
+bin/plugin install --no-verify
+
 ```
 - Run Logstash with your plugin
 ```sh
@@ -75,7 +90,12 @@ gem build logstash-filter-awesome.gemspec
 ```
 - Install the plugin from the Logstash home
 ```sh
-bin/logstash-plugin install /your/local/plugin/logstash-filter-awesome.gem
+# Logstash 2.3 and higher
+bin/logstash-plugin install --no-verify
+
+# Prior to Logstash 2.3
+bin/plugin install --no-verify
+
 ```
 - Start Logstash and proceed to test the plugin
 
