@@ -74,8 +74,8 @@ class IPIP
           countrycode: result[11].to_s.empty? ? "N/A" : result[11],
           region: result[12].to_s.empty? ? "N/A" : result[12],
           location: {
-              lon: result[6].to_s.empty? ? "N/A" : result[6],
-              lat: result[5].to_s.empty? ? "N/A" : result[5]
+              lon: result[6].to_f.empty? ? 0.0 : result[6],
+              lat: result[5].to_f.empty? ? 0.0 : result[5]
           }
       }
   end
